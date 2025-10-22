@@ -38,9 +38,9 @@ public class SceneSix {
     }
 
     private static void setupCollisionAreas(SceneTile scene) {
-        scene.setTile(5, 5, TileType.WATER);
-        scene.setTile(10, 10, TileType.WATER);
-        scene.setTile(7, 13, TileType.WATER);
+        for (int y = 0; y <= 64; y++) {
+            scene.setTile(50, y, TileType.WATER);
+        }
     }
 
     public static void updateExitTile() {

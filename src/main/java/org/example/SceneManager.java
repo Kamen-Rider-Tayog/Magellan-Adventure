@@ -62,7 +62,8 @@ public class SceneManager {
                     "This marked the beginning of a complex and fateful chapter",
                     "in the history of the Philippines.",
                     "",
-                    "Thank you for experiencing Magellan's Journey!"
+                    "Thank you for experiencing Magellan's Journey!",
+                    "Made with love by Kagame"
             }
     };
 
@@ -256,10 +257,10 @@ public class SceneManager {
                 gamePanel.getPlayer().setPosition(25, 20);
                 break;
             case 3:
-                gamePanel.getPlayer().setPosition(24, 24);
+                gamePanel.getPlayer().setPosition(24, 20);
                 break;
             case 4:
-                gamePanel.getPlayer().setPosition(15, 15);
+                gamePanel.getPlayer().setPosition(25, 15);
                 break;
             case 5:
                 gamePanel.getPlayer().setPosition(9, 9);
