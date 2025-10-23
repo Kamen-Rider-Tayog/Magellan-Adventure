@@ -263,7 +263,7 @@ public class SceneManager {
                 gamePanel.getPlayer().setPosition(25, 15);
                 break;
             case 5:
-                gamePanel.getPlayer().setPosition(9, 9);
+                gamePanel.getPlayer().setPosition(32, 32);
                 break;
             default:
                 gamePanel.getPlayer().setPosition(

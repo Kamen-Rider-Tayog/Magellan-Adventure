@@ -6,7 +6,7 @@ public enum ObjectType {
     KAWAL(true, 2, 2, "assets/objects/kawal.png", "K"),
     SAILOR1(true, 2, 2, "assets/objects/sailor1.png", "S1"),
     SAILOR2(true, 2, 2, "assets/objects/sailor2.png", "S2"),
-    HUMABON(true, 2, 2, "assets/objects/humabon.png", "H");
+    HUMABON(true, 2, 2, "assets/objects/rajah.png", "H");
 
     private final boolean collidable;
     private final int widthInTiles;

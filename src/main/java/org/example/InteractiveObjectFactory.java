@@ -273,6 +273,8 @@ public class InteractiveObjectFactory {
     }
 
     private static InteractiveObject[] createScene5Objects() {
+        List<InteractiveObject> objects = new ArrayList<>();
+
         // Rajah Humabon conversation
         String[] humabonDialogues = {
                 "Greetings! My name is Magellan, we are travellers from the north-west land.",
@@ -291,7 +293,7 @@ public class InteractiveObjectFactory {
         };
 
         InteractiveObject rajahHumabon = new InteractiveObject(7, 9, "Rajah Humabon",
-                humabonDialogues, ObjectType.SAILOR2);
+                humabonDialogues, ObjectType.HUMABON);
 
         rajahHumabon.setAlternatingSpeakers(alternatingSpeakers);
 
@@ -301,6 +303,63 @@ public class InteractiveObjectFactory {
             System.out.println("Rajah Humabon dialogue completed - journey complete!");
         });
 
-        return new InteractiveObject[]{rajahHumabon};
+        objects.add(rajahHumabon);
+
+        // ADD SAILORS ON THE RIGHT SIDE BEFORE COLLISION AREA (x=50)
+        // Position sailors around x=40-48 to be before the water collision at x=50
+
+        // First sailor - near the top right
+        String[] sailor1Dialogues = {
+                "Captain, the crew is settling in well on this island.",
+                "The locals seem friendly and the provisions are plentiful."
+        };
+
+        InteractiveObject sailor1 = new InteractiveObject(42, 8, "Crew Member",
+                sailor1Dialogues, ObjectType.SAILOR1);
+        objects.add(sailor1);
+
+        // Second sailor - middle right area
+        String[] sailor2Dialogues = {
+                "This land is beautiful, Captain.",
+                "The vegetation is lush and the waters are clear.",
+                "A welcome sight after our long journey across the Pacific."
+        };
+
+        InteractiveObject sailor2 = new InteractiveObject(45, 25, "Navigator",
+                sailor2Dialogues, ObjectType.SAILOR2);
+        objects.add(sailor2);
+
+        // Third sailor - bottom right area
+        String[] sailor3Dialogues = {
+                "We're repairing the ships and restocking supplies.",
+                "The local craftsmen have been very helpful with materials."
+        };
+
+        InteractiveObject sailor3 = new InteractiveObject(48, 40, "Shipwright",
+                sailor3Dialogues, ObjectType.SAILOR1);
+        objects.add(sailor3);
+
+        // Fourth sailor - near the water edge
+        String[] sailor4Dialogues = {
+                "Careful with those barrels!",
+                "We need to keep our drinking water separate from seawater."
+        };
+
+        InteractiveObject sailor4 = new InteractiveObject(47, 55, "Quartermaster",
+                sailor4Dialogues, ObjectType.SAILOR2);
+        objects.add(sailor4);
+
+        // Fifth sailor - observing the surroundings
+        String[] sailor5Dialogues = {
+                "The geography here is fascinating, Captain.",
+                "These islands form a perfect natural harbor.",
+                "It would make an excellent trading post."
+        };
+
+        InteractiveObject sailor5 = new InteractiveObject(43, 35, "Cartographer",
+                sailor5Dialogues, ObjectType.SAILOR1);
+        objects.add(sailor5);
+
+        return objects.toArray(new InteractiveObject[0]);
     }
 }
