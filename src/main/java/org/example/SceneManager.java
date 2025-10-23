@@ -63,6 +63,8 @@ public class SceneManager {
                     "in the history of the Philippines.",
                     "",
                     "Thank you for experiencing Magellan's Journey!",
+                    "Script written by Kate, Marianne, Khim, Iya, and Tina",
+                    "Art by Rhea",
                     "Made with love by Kagame"
             }
     };
