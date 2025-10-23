@@ -16,7 +16,7 @@ public class GamePanel extends JPanel implements KeyListener {
 
     private InteractiveObject currentInteractingObject;
     private NarrativeScreen narrativeScreen;
-
+    private SoundManager soundManager;
     private UIManager uiManager;
     private InputHandler inputHandler;
     private GameRenderer gameRenderer;
@@ -47,6 +47,8 @@ public class GamePanel extends JPanel implements KeyListener {
 
         System.out.println("Initializing game...");
         System.out.println("Viewport: " + viewportCols + "x" + viewportRows);
+
+        soundManager = new SoundManager();
 
         // INITIALIZE TITLE SCREEN FIRST
         titleScreen = new TitleScreen(this);
@@ -368,4 +370,5 @@ public class GamePanel extends JPanel implements KeyListener {
     public int getViewportCols() { return viewportCols; }
     public int getViewportRows() { return viewportRows; }
     public TitleScreen getTitleScreen() { return titleScreen; }
+    public SoundManager getSoundManager() { return soundManager; }
 }
