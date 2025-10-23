@@ -14,6 +14,12 @@ public class InputHandler {
     public void keyPressed(KeyEvent e) {
         int keyCode = e.getKeyCode();
 
+        // Check title screen first
+        if (gamePanel.getTitleScreen().isTitleVisible()) {
+            handleTitleScreenInput(e);
+            return;
+        }
+
         if (keyCode == KeyEvent.VK_ESCAPE) {
             if (gamePanel.getDialogueBox().isDialogueVisible()) {
                 e.consume();
@@ -90,6 +96,14 @@ public class InputHandler {
             gamePanel.checkForInteraction();
         } else {
             gamePanel.checkForInteraction();
+        }
+    }
+
+    private void handleTitleScreenInput(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            gamePanel.getTitleScreen().hideTitle();
+            // Start the narrative after title screen
+            gamePanel.getSceneManager().startGameWithNarrative();
         }
     }
 

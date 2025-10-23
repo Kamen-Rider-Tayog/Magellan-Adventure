@@ -22,6 +22,7 @@ public class GamePanel extends JPanel implements KeyListener {
     private GameRenderer gameRenderer;
     private CollisionDetector collisionDetector;
     private GameStateManager gameStateManager;
+    private TitleScreen titleScreen;
 
     private InteractiveObject[] interactiveObjects;
     private final int viewportCols;
@@ -47,7 +48,11 @@ public class GamePanel extends JPanel implements KeyListener {
         System.out.println("Initializing game...");
         System.out.println("Viewport: " + viewportCols + "x" + viewportRows);
 
-        // INITIALIZE NARRATIVE SCREEN FIRST - BEFORE ANYTHING ELSE
+        // INITIALIZE TITLE SCREEN FIRST
+        titleScreen = new TitleScreen(this);
+        add(titleScreen);
+
+        // THEN INITIALIZE NARRATIVE SCREEN
         narrativeScreen = new NarrativeScreen(this);
         add(narrativeScreen);
 
@@ -84,9 +89,9 @@ public class GamePanel extends JPanel implements KeyListener {
 
         System.out.println("Game initialization complete!");
 
-        // DELAY THE INITIAL NARRATIVE TO ENSURE EVERYTHING IS READY
+        // SHOW TITLE SCREEN FIRST
         SwingUtilities.invokeLater(() -> {
-            sceneManager.startGameWithNarrative();
+            titleScreen.showTitle();
         });
     }
 
@@ -235,7 +240,8 @@ public class GamePanel extends JPanel implements KeyListener {
     }
 
     public boolean canAcceptInput() {
-        return !mapOverlay.isFullscreenMode() &&
+        return !titleScreen.isTitleVisible() &&
+                !mapOverlay.isFullscreenMode() &&
                 !dialogueBox.isDialogueVisible() &&
                 !narrativeScreen.isNarrativeVisible() &&
                 !uiManager.getSettingsPanel().isSettingsVisible();
@@ -361,4 +367,5 @@ public class GamePanel extends JPanel implements KeyListener {
     public SceneManager getSceneManager() { return sceneManager; }
     public int getViewportCols() { return viewportCols; }
     public int getViewportRows() { return viewportRows; }
+    public TitleScreen getTitleScreen() { return titleScreen; }
 }

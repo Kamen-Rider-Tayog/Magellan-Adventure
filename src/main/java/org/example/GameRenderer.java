@@ -14,15 +14,15 @@ public class GameRenderer {
     public void drawGame(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
 
-        // Only draw world if narrative is not visible
-        if (!gamePanel.getNarrativeScreen().isNarrativeVisible()) {
+        // Only draw world if title and narrative are not visible
+        if (!gamePanel.getTitleScreen().isTitleVisible() &&
+                !gamePanel.getNarrativeScreen().isNarrativeVisible()) {
             drawWorld(g2d);
             drawExitDoors(g2d);
             drawInteractiveObjects(g2d);
             drawPlayer(g2d);
             drawFPS(g2d);
         }
-        // If narrative is visible, it will draw on top automatically
     }
 
     private void drawWorld(Graphics2D g) {
