@@ -62,9 +62,12 @@ public class SceneManager {
                     "This marked the beginning of a complex and fateful chapter",
                     "in the history of the Philippines.",
                     "",
-                    "Thank you for experiencing Magellan's Journey!",
-                    "Script written by Kate, Marianne, Khim, Iya, and Tina",
-                    "Art by Rhea",
+                    "Thank you for playing Magellan's Journey!",
+                    "And special thanks to the girl who motivated me to finish this game.",
+                    "",
+                    "Script written by Kate, Marianne, Khim, Iya, and Tina.",
+                    "Voice by Chlowen, Johan, and Ryan.",
+                    "Art by Rhea.",
                     "Made with love by Kagame"
             }
     };
