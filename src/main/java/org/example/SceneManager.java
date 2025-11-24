@@ -63,7 +63,6 @@ public class SceneManager {
                     "in the history of the Philippines.",
                     "",
                     "Thank you for playing Magellan's Journey!",
-                    "And special thanks to the girl who motivated me to finish this game.",
                     "",
                     "Script written by Kate, Marianne, Khim, Iya, and Tina.",
                     "Voice by Chlowen, Johan, and Ryan.",
